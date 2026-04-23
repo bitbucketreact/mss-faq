@@ -4,24 +4,43 @@ const PlayStoreIcon = () => (
   </svg>
 );
 
+const ArrowIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16">
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
+  </svg>
+);
+
 const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-content">
         <div className="hero-text">
-          <h1>Send Bulk SMS Directly From Your Phone</h1>
+          <span className="hero-eyebrow">
+            <span className="dot" />
+            Trusted by 1M+ users
+          </span>
+          <h1>
+            Send <span className="grad">Bulk SMS</span> Directly From Your Phone
+          </h1>
           <p>
-            Multi SMS Sender allows you to send messages to multiple contacts at once using your Android device. No gateways. No complexity. Full delivery tracking.
+            Multi SMS Sender lets you message multiple contacts at once from your
+            Android device. No gateways. No complexity. Full delivery tracking.
           </p>
-          <a
-            href="https://play.google.com/store/apps/details?id=crazy.pradeep.multismssender"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-download-btn"
-          >
-            <PlayStoreIcon />
-            Download on Play Store
-          </a>
+          <div className="hero-cta-row">
+            <a
+              href="https://play.google.com/store/apps/details?id=crazy.pradeep.multismssender"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-download-btn"
+            >
+              <PlayStoreIcon />
+              Download on Play Store
+            </a>
+            {/* <a href="#screenshots" className="hero-ghost-btn">
+              See screenshots <ArrowIcon />
+            </a> */}
+          </div>
           <div className="hero-stats">
             <div className="hero-stat">
               <span className="hero-stat-value">1M+</span>
@@ -32,10 +51,24 @@ const Hero = () => {
               <span className="hero-stat-value">4.5 ★</span>
               <span className="hero-stat-label">Star Rating</span>
             </div>
+            <div className="hero-stat-divider" />
+            <div className="hero-stat">
+              <span className="hero-stat-value">300+</span>
+              <span className="hero-stat-label">Reviews</span>
+            </div>
           </div>
         </div>
-        <div className="hero-phone">
-          <img src="/images/app-screenshot.jpg" alt="Multi SMS Sender App Screenshot" />
+
+        <div className="hero-phones" aria-hidden="true">
+          <div className="hero-phone-card left">
+            <img src="/images/1.png" alt="" />
+          </div>
+          <div className="hero-phone-card center">
+            <img src="/images/2.png" alt="" />
+          </div>
+          <div className="hero-phone-card right">
+            <img src="/images/3.png" alt="" />
+          </div>
         </div>
       </div>
     </section>
