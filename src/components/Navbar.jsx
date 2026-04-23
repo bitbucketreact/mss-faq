@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
   const isHome = pathname === '/';
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar${scrolled || !isHome ? ' scrolled' : ''}`}>
       <Link to="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
         <img className="navbar-logo-icon" src="/images/logo.svg" alt="MSS Logo" />
         <span className="navbar-logo-text">
@@ -33,12 +41,16 @@ const Navbar = () => {
         {isHome && (
           <>
             <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#about" onClick={() => setMenuOpen(false)}>About Us</a>
-            <a href="#connect" onClick={() => setMenuOpen(false)}>Contact Us</a>
+            <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
+            <a href="#screenshots" onClick={() => setMenuOpen(false)}>Screenshots</a>
+            <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#connect" onClick={() => setMenuOpen(false)}>Contact</a>
           </>
         )}
         <a
-          href="#getapp"
+          href="https://play.google.com/store/apps/details?id=crazy.pradeep.multismssender"
+          target="_blank"
+          rel="noopener noreferrer"
           className="navbar-cta"
           onClick={() => setMenuOpen(false)}
         >

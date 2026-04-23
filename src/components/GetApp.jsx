@@ -7,20 +7,22 @@ const PlayStoreIcon = () => (
 const GetApp = () => {
   return (
     <section className="getapp" id="getapp">
-      <h2>Get App</h2>
-      <p>Ready to send bulk SMS the <strong>easy way</strong>?</p>
-      <a
-        href="https://play.google.com/store/apps/details?id=crazy.pradeep.multismssender"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="getapp-btn"
-      >
-        <PlayStoreIcon />
-        <div className="getapp-btn-text">
-          <span>Download Multi SMS Sender</span>
-          <strong>on Google Play</strong>
-        </div>
-      </a>
+      <div className="getapp-card">
+        <h2>Ready to send bulk SMS the easy way?</h2>
+        <p>Install Multi SMS Sender and start messaging your groups in minutes.</p>
+        <a
+          href="https://play.google.com/store/apps/details?id=crazy.pradeep.multismssender"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="getapp-btn"
+        >
+          <PlayStoreIcon />
+          <div className="getapp-btn-text">
+            <span>Download Multi SMS Sender</span>
+            <strong>on Google Play</strong>
+          </div>
+        </a>
+      </div>
     </section>
   );
 };

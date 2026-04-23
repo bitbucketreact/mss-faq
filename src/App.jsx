@@ -4,6 +4,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Features from './components/Features'
+import Screenshots from './components/Screenshots'
 import Connect from './components/Connect'
 import GetApp from './components/GetApp'
 import Footer from './components/Footer'
@@ -30,6 +32,8 @@ function Home() {
   return (
     <>
       <Hero />
+      <Features />
+      <Screenshots />
       <About />
       <Connect />
       <GetApp />
